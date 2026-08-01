@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Future Mobility Design and Tech Student Project Archive</title>
+  
+  <!-- <base href="https://[YOUR_USERNAME].github.io/student-archive/"> -->
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; }
+    
+    body {
+      background-color: #f8f9fa;
+      color: #212529;
+      width: 100%;
+      min-height: 100vh;
+      padding: 40px 20px 80px 20px;
+    }
+
+    .archive-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header Section */
+    .header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .header h1 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+    }
+    .header h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-top: 4px;
+    }
+
+    /* Controls row: year filter + search on one line, to keep the top of
+       the page compact so opened project content is front and center. */
+    .controls-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Year Filter Navigation Bar */
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 6px 16px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      color: #475569;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .filter-btn:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+      border-color: #cbd5e1;
+    }
+    .filter-btn.active {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+    .filter-btn:disabled {
+      background: #f8f9fa;
+      color: #94a3b8;
+      border-color: #e2e8f0;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    /* Search Input Bar */
+    .search-wrapper {
+      width: 220px;
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      padding: 8px 14px;
+      border-radius: 12px;
+      border: 1px solid #cbd5e1;
+      font-size: 0.85rem;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      background: #fff;
+    }
+    .search-input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    /* Grid Layout */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 24px;
+    }
+
+    /* Thumbnail strip: shown instead of the grid while a project is open,
+       so other projects stay one tap away without leaving the detail view. */
+    .thumb-strip {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 4px 4px 14px 4px;
+      margin-bottom: 20px;
+    }
+    .thumb-strip-item {
+      flex: 0 0 auto;
+      width: 72px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      font: inherit;
+    }
+    .thumb-strip-item img {
+      display: block;
+      width: 72px;
+      height: 72px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 3px solid transparent;
+      opacity: 0.5;
+      transition: border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+    }
+    .thumb-strip-item:hover img {
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+    .thumb-strip-item.active img {
+      border-color: #2563eb;
+      opacity: 1;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+    }
+    .thumb-strip-label {
+      display: block;
+      width: 72px;
+      margin-top: 4px;
+      font-size: 0.65rem;
+      color: #64748b;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: center;
+    }
+
+    /* Project Card */
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+      border-color: #cbd5e1;
+    }
+    .card-thumb-wrapper {
+      position: relative;
+      width: 100%;
+      height: 190px;
+      background-color: #e2e8f0;
+      overflow: hidden;
+    }
+    .card-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      image-rendering: -webkit-optimize-contrast; 
+    }
+    .card:hover .card-thumb {
+      transform: scale(1.05);
+    }
+    .year-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(4px);
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 12px;
+    }
+
+    .card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .card-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #2563eb;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+    .card-members {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-bottom: 12px;
+    }
+    .card-desc {
+      font-size: 0.88rem;
+      color: #475569;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .card-keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .keyword-pill {
+      background-color: #f1f5f9;
+      color: #64748b;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 12px;
+    }
+    .card-footer-btn {
+      margin-top: auto;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #2563eb;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Detail View (replaces the old fixed-position modal overlay).
+       Instead of popping up over the grid, it swaps in as normal in-flow
+       content — no position:fixed/vh math needed, so it's immune to the
+       iframe-viewport bugs that broke the popup on mobile inside Wix. */
+    .detail-view {
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid #e2e8f0;
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 30px;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      overflow-anchor: none; /* stop the browser auto-scrolling as blog images load in below */
+      animation: detailFadeIn 0.2s ease-out;
+    }
+    @keyframes detailFadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+
+    .modal-header-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      margin-right: 8px;
+    }
+    
+    .modal-title { 
+      font-size: 1.5rem; 
+      font-weight: 800; 
+      color: #0f172a; 
+      margin-bottom: 6px; 
+      line-height: 1.3; 
+    }
+    
+    .modal-team { 
+      font-size: 0.92rem; 
+      color: #64748b; 
+      margin-bottom: 24px; 
+    }
+
+    .media-section { 
+      margin-bottom: 24px; 
+    }
+    
+    .media-section h3 { 
+      font-size: 1rem; 
+      font-weight: 700; 
+      margin-bottom: 12px; 
+      color: #1e293b; 
+    }
+    
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .video-container iframe,
+    .video-container video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+      object-fit: contain;
+    }
+
+    /* Image Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .gallery-item {
+      position: relative;
+      width: 100%;
+      height: 180px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #e2e8f0;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .gallery-item:hover {
+      transform: scale(1.02);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Project Description */
+    .project-desc {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #475569;
+      margin-bottom: 20px;
+      padding: 16px;
+      background: #f8f9fa;
+      border-left: 4px solid #2563eb;
+      border-radius: 4px;
+      white-space: normal;
+      word-break: break-word;
+    }
+
+    /* Blog Content */
+    .blog-content {
+      color: #475569;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+    .blog-content h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 16px 0 8px 0;
+    }
+    .blog-content p {
+      margin-bottom: 12px;
+    }
+    .blog-content img {
+      display: block;
+      max-width: 80%;
+      margin: 16px auto;
+      border-radius: 8px;
+      cursor: zoom-in;
+      transition: max-width 0.25s ease;
+    }
+    .blog-content img.zoomed {
+      /* width: 100% overrides raw HTML width="..." attributes some images
+         use (e.g. width="80%") — those set a fixed CSS width via a
+         low-priority presentational hint that max-width alone can't grow
+         past, so it has to be beaten with a real width rule here. */
+      width: 100%;
+      max-width: 100%;
+      cursor: zoom-out;
+    }
+    .blog-content ul, .blog-content ol {
+      margin-left: 20px;
+      margin-bottom: 12px;
+    }
+    .blog-content li {
+      margin-bottom: 6px;
+    }
+
+    /* Material/Button Section */
+    .material-section {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid #e2e8f0;
+    }
+    .material-section h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #1e293b;
+    }
+
+    .copyright-notice {
+      margin-top: 20px;
+      font-size: 0.78rem;
+      color: #94a3b8;
+      font-style: italic;
+    }
+    
+    .btn-group { 
+      display: flex; 
+      gap: 12px; 
+      flex-wrap: wrap; 
+      margin-top: 14px; 
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+      gap: 6px;
+    }
+    .btn-primary { 
+      background: #2563eb; 
+      color: #ffffff; 
+    }
+    .btn-primary:hover { 
+      background: #1d4ed8; 
+    }
+    .btn-secondary { 
+      background: #f1f5f9; 
+      color: #334155; 
+      border: 1px solid #cbd5e1; 
+    }
+    .btn-secondary:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .back-btn {
+      padding: 6px 16px;
+      font-size: 0.8rem;
+      border-radius: 16px;
+      margin-bottom: 20px;
+    }
+
+    /* Bottom nav: repeats the thumb strip + back button at the end of a
+       project's detail view, so switching projects doesn't require
+       scrolling all the way back up. */
+    .bottom-nav {
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid #e2e8f0;
+      text-align: center;
+    }
+    .bottom-nav .thumb-strip {
+      margin-bottom: 12px;
+    }
+    .bottom-nav .back-btn {
+      margin-bottom: 0;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: #64748b;
+      grid-column: 1 / -1;
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 20px 14px; }
+      .header h1 { font-size: 1.6rem; }
+      .search-wrapper { width: 100%; }
+      .grid-container { grid-template-columns: 1fr; }
+      .detail-view { padding: 20px; }
+      .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+
+      /* Text reads relatively large vs. images on small screens — shrink
+         text a bit and let images use more of the available width. */
+      .modal-title { font-size: 1.3rem; }
+      .modal-team { font-size: 0.85rem; }
+      .project-desc { font-size: 0.88rem; }
+      .blog-content { font-size: 0.88rem; }
+      .blog-content h3 { font-size: 1rem; }
+      .blog-content img { max-width: 94%; }
+      .blog-content img.zoomed { width: 100%; max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="archive-container">
+    <div class="header">
+      <h1>Future Mobility Design and Tech</h1>
+      <h2>Student Team Projects Archive</h2>
+    </div>
+
+    <!-- Controls: year filter + search, always visible, on one compact line -->
+    <div class="controls-bar">
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="setYearFilter('all', this)">View All</button>
+        <button class="filter-btn" onclick="setYearFilter('2025', this)">2025</button>
+        <button class="filter-btn" onclick="setYearFilter('2026', this)">2026</button>
+        <button class="filter-btn" disabled title="Coming Soon">2027</button>
+      </div>
+
+      <div class="search-wrapper">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search..." oninput="handleSearch()" />
+      </div>
+    </div>
+
+    <!-- Thumbnail strip: shown only while a project is open, for quickly switching between projects -->
+    <div class="thumb-strip" id="thumbStrip" style="display: none;"></div>
+
+    <!-- Projects Grid Container -->
+    <div class="grid-container" id="projectGrid"></div>
+
+    <!-- Detail View: shown instead of the grid when a project is opened -->
+    <div class="detail-view" id="projectDetail" style="display: none;">
+      <button class="btn btn-secondary back-btn" onclick="closeProjectDetail()">&larr; Back to full list</button>
+      <div>
+        <span class="modal-header-tag" id="modalYearBadge">2026</span>
+        <span class="modal-header-tag" id="modalTeamTag" style="background: #f1f5f9; color:#475569;">Team 1</span>
+      </div>
+      <h2 class="modal-title" id="modalTitle">Project Title</h2>
+      <p class="modal-team" id="modalTeam">Team Members</p>
+
+      <!-- Media Section (Video or Gallery) -->
+      <div id="mediaContent" class="media-section">
+        <h3>Demo Media</h3>
+        <div class="video-container" id="videoContainer">
+          <!-- Dynamically inserted iframe or video element -->
+        </div>
+        <div class="gallery-grid" id="galleryGrid" style="display: none;">
+          <!-- Image gallery -->
+        </div>
+      </div>
+
+      <!-- Project Description -->
+      <div class="project-desc" id="projectDesc">
+        <!-- Dynamically inserted description -->
+      </div>
+
+      <!-- Blog Content Section (Always visible now) -->
+      <div id="blogContent" class="blog-content">
+        <!-- Dynamically inserted blog content -->
+      </div>
+
+      <!-- Materials Section -->
+      <div class="material-section">
+        <h3>📚 Archived Materials</h3>
+        <div class="btn-group" id="materialButtons">
+          <!-- Dynamically generated buttons -->
+        </div>
+      </div>
+
+      <!-- Copyright notice: auto-filled from the project's year + members -->
+      <p class="copyright-notice" id="copyrightNotice"></p>
+
+      <!-- Bottom navigation: jump to another project without scrolling back to the top -->
+      <div class="bottom-nav">
+        <div class="thumb-strip" id="thumbStripBottom" style="display: none;"></div>
+        <button class="btn btn-secondary back-btn" onclick="closeProjectDetail()">&larr; Back to full list</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load projects data and scripts -->
+  <script src="./projects-data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
