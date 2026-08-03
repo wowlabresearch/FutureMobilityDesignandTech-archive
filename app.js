@@ -139,7 +139,14 @@ function openProjectDetail(project) {
   document.getElementById('modalYearBadge').innerText = project.year;
   document.getElementById('modalTeamTag').innerText = project.team;
   document.getElementById('modalTitle').innerText = project.title;
-  document.getElementById('modalTeam').innerText = `Team Members: ${project.members}`;
+
+  // Show each member with their affiliation in parentheses when available
+  // (parsed from the markdown's "## Affiliations" list); otherwise fall
+  // back to the plain member name list.
+  const teamLine = (project.authors && project.authors.length > 0)
+    ? project.authors.map(a => `${a.name} (${a.affiliation})`).join(', ')
+    : project.members;
+  document.getElementById('modalTeam').innerText = `Team Members: ${teamLine}`;
 
   // Set description (full text, no truncation)
   document.getElementById('projectDesc').innerText = project.desc;
