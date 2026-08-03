@@ -8,8 +8,25 @@ const rawProjects = [
     "id": 7,
     "year": "2026",
     "team": "IDEAL",
-    "members": "Joonhee Lee, Minjae Chof, Haerim Han, Yujin Kim",
-    "authors": [],
+    "members": "Joonhee Lee, Minjae Cho, Haerim Han, Yujin Kim",
+    "authors": [
+      {
+        "name": "Joonhee Lee",
+        "affiliation": "School of Electronics and Electrical Engineering (Deisgn Engineering), Hongik University"
+      },
+      {
+        "name": "Minjae Cho",
+        "affiliation": "Mechanical and System Design Engineering, Hongik University"
+      },
+      {
+        "name": "Haerim Han",
+        "affiliation": "Industrial Design, Hongik University"
+      },
+      {
+        "name": "Yujin Kim",
+        "affiliation": "Industrial Design, Hongik University"
+      }
+    ],
     "title": "Plantow: Autonomous Modular Planter Mobility for Adaptive Urban Park Spatial Management",
     "desc": "Urban park landscapes traditionally face rigid spatial layouts and high labor costs for seasonal re-arrangement and botanical maintenance. We present Plantow, an autonomous planter mobility system that transforms stationary park flora into reconfigurable landscape modules. Featuring a Rocker-Bogie wheel suspension for uneven terrain traversal, lower-level safety lighting, automated irrigation, and multi-sensor obstacle avoidance, Plantow enables real-time spatial adaptation. Controlled via a central management UI, the autonomous planters dynamically reconfigure park layouts for seasonal festivals, open emergency passage corridors during crises, and optimize plant hydration. Furthermore, modular joining capabilities allow multi-unit expansions, while a user app facilitates rental and status monitoring. By integrating robotic locomotion with landscape architecture, Plantow establishes a flexible, data-driven park infrastructure that enhances operational efficiency, emergency safety, and visitor engagement across dynamic public spaces",
     "keywords": [
@@ -23,7 +40,7 @@ const rawProjects = [
     "youtubeEmbed": "https://www.youtube.com/embed/RQFFoSAWCWI?si=ARGUlcas222l_43w",
     "videoUrl": null,
     "gallery": [],
-    "blogContent": "<div style=\"text-align: center; margin: 20px 0;\">\n<img src=\"./assets/2026/fig/ideal.gif\" width=\"80%\"></div>\n",
+    "blogContent": "<div style=\"text-align: center; margin: 20px 0;\">\n<img src=\"./assets/2026/fig/ideal.gif\" width=\"80%\"></div>",
     "materials": []
   },
   {
@@ -31,7 +48,20 @@ const rawProjects = [
     "year": "2026",
     "team": "조윤하루",
     "members": "Kyeongmin Ha, Huiseo Yun, Yuna Cho",
-    "authors": [],
+    "authors": [
+      {
+        "name": "Kyeongmin Ha",
+        "affiliation": "Design Convergence (Deisgn Engineering), Hongik University"
+      },
+      {
+        "name": "Huiseo Yun",
+        "affiliation": "Visual Communication Design, Hongik University"
+      },
+      {
+        "name": "Yuna Cho",
+        "affiliation": "Industrial Design, Hongik University"
+      }
+    ],
     "title": "Surf Road: A Fusion of Personal and Shared Mobility for Seamless Urban Experience",
     "desc": "As personal mobility (PM) ridership surges, contemporary urban planning focuses heavily on dedicating isolated lanes, often overlooking the continuity of the seamless transit experience. To address these fragmented transfer points between public transit and micro-mobility, this paper introduces ‘Surf Road’, a novel paradigm in urban transportation. While modern cities are physically connected, a rider’s journey is often abruptly disrupted at the boundaries of macro-infrastructure. Accompanied by a video demonstration, we present a symbiotic PM system that organically docks with moving tram networks, transforming a stagnant commute into a playful, continuous 'urban surfing' experience. Without requiring prohibitive infrastructure overhauls, Surf Road seamlessly coexists with existing transit grids to deliver a high-continuity user experience (UX), offering a futuristic framework for human-infrastructure symbiosis.",
     "keywords": [
@@ -59,7 +89,20 @@ const rawProjects = [
     "year": "2026",
     "team": "MOBI^2",
     "members": "Jisun Moon, Jungyeon Park, Jihee Choi",
-    "authors": [],
+    "authors": [
+      {
+        "name": "Jisun Moon",
+        "affiliation": "Mechanical and System Design Engineering, Hongik University"
+      },
+      {
+        "name": "Jungyeon Park",
+        "affiliation": "Design Convergence, Hongik University"
+      },
+      {
+        "name": "Jihee Choi",
+        "affiliation": "Industrial Design, Hongik University"
+      }
+    ],
     "title": "ViA: AR Glasses Bridging Seamless Fandom Experiences Across Urban Mobility Journeys",
     "desc": "Urban fandom experiences are often fragmented during transit, where fragmented information forces users to repeatedly check details and breaks emotional immersion. To address this discontinuity, we propose ViA, an AR glasses system designed to deliver a seamless, context-aware user experience across all stages of transit—from pre-trip preparation to multi-modal travel, venue navigation, and return home. By shifting the interface from smartphones to hands-free augmented reality layers over real-world surroundings, ViA provides continuous navigation, contextual alerts, real-time physiological tracking via a companion wristband, and instant view-sharing. Furthermore, customizable modular accessories such as light stick attachments and frame cases transform standard smart eyewear into a personalized fan identity[cite: 1]. Ultimately, ViA redefines travel time from a passive spent duration into an immersive extension of the fandom journey, creating unbroken emotional and functional continuity across urban spaces",
     "keywords": [
@@ -72,7 +115,7 @@ const rawProjects = [
     "youtubeEmbed": "https://www.youtube.com/embed/PweNp3ErGrA?si=k5JBKZSPEV2TVTrM",
     "videoUrl": null,
     "gallery": [],
-    "blogContent": "<div style=\"text-align: center; margin: 20px 0;\">\n<img src=\"./assets/2026/fig/via.png\" width=\"80%\">\n<img src=\"./assets/2026/fig/via2.png\" width=\"80%\">\n<img src=\"./assets/2026/fig/via3.png\" width=\"80%\">\n<img src=\"./assets/2026/fig/via4.png\" width=\"80%\"></div>\n",
+    "blogContent": "<div style=\"text-align: center; margin: 20px 0;\">\n<img src=\"./assets/2026/fig/via.png\" width=\"80%\">\n<img src=\"./assets/2026/fig/via2.png\" width=\"80%\">\n<img src=\"./assets/2026/fig/via3.png\" width=\"80%\">\n<img src=\"./assets/2026/fig/via4.png\" width=\"80%\"></div>",
     "materials": []
   },
   {
@@ -80,7 +123,20 @@ const rawProjects = [
     "year": "2026",
     "team": "AXIS",
     "members": "Mina Kim, Jinwoo Han, Sanghyeon Hwang",
-    "authors": [],
+    "authors": [
+      {
+        "name": "Mina Kim",
+        "affiliation": "Industrial Design, Hongik University"
+      },
+      {
+        "name": "Jinwoo Han",
+        "affiliation": "Industrial Design, Hongik University"
+      },
+      {
+        "name": "Sanghyeon Hwang",
+        "affiliation": "Mechanical and System Design Engineering, Hongik University"
+      }
+    ],
     "title": "CONI: Automated Road-Surface Projection and Haptic Communication for Personal Mobility Safety",
     "desc": "Increasing personal mobility (PM) usage has elevated collision risks with pedestrians due to fragmented communication and auditory or visual distractions. To overcome manual warning limitations, we propose CONI, an automated handlebar-mounted communication system integrating projection graphics, directional audio, and haptic feedback. Driven by an IMU, front-facing mmWave radar, and a rear-scanning ToF sensor, CONI dynamically predicts riding trajectories and tracks surrounding obstacles. The system projects continuous directional graphics onto the road surface to convey intent to pedestrians while triggering automated audible warnings when proximity hazards are detected. Concurrently, a 180-degree rear-scanning mechanism identifies approaching objects, alerting riders via handlebar haptic vibrations and projected road cues without requiring backward glances. By unifying visual, auditory, and tactile modalities into an automated workflow, CONI establishes intuitive, context-aware interaction between PM riders and pedestrians, significantly enhancing urban micromobility safety.",
     "keywords": [
@@ -141,7 +197,20 @@ const rawProjects = [
     "year": "2025",
     "team": "소소한조",
     "members": "Hyeonjoon So, Eugene Han, Haon Jo",
-    "authors": [],
+    "authors": [
+      {
+        "name": "Hyeonjoon So",
+        "affiliation": "Mechanical & System Design Engineering, Hongik University"
+      },
+      {
+        "name": "Eugene Han",
+        "affiliation": "Visual Communication Design, Hongik University"
+      },
+      {
+        "name": "Haon Jo",
+        "affiliation": "Industrial Design, Hongik University"
+      }
+    ],
     "title": "COCOON : Emotional Survival in the Age of Automated Care",
     "desc": "Cocoon is a speculative autonomous mobility system designed to support children in a future where traditional caregiving structures have collapsed. As birth rates decline and parental presence diminishes due to socioeconomic pressures, children are increasingly left to navigate daily life alone. Cocoon addresses this by offering a responsive, emotionally intelligent space that interacts through voice and gesture recognition. It features a transformable seating system, an omnidirectional treadmill, and a character-based interface that adapts to a child’s physical and emotional state. By incorporating affective computing and embodied interaction, Cocoon fosters a sense of companionship and autonomy during transit. Rather than replacing human care, the project critically explores what it means for technology to assume caregiving roles. Through scenario-based user flows and immersive storytelling, Cocoon presents a provocative design fiction that challenges conventional mobility paradigms and raises ethical questions about the automation of empathy and care in children’s everyday lives.",
     "keywords": [
@@ -154,7 +223,7 @@ const rawProjects = [
     "youtubeEmbed": "https://www.youtube.com/embed/wStp_WJrp7s?si=rC8gXZtWdUYevM-Y",
     "videoUrl": null,
     "gallery": [],
-    "blogContent": "<p><strong>Published at:</strong> </p>\n<ul>\n<li>Adjunct Proceedings of the 17th International Conference on Automotive User Interfaces and Interactive Vehicular Applications (AutomotiveUI 2025)\n<a href=\"https://doi.org/10.1145/3744335.375685\">doi.org/10.1145/3744335.375685</a></li>\n</ul>\n",
+    "blogContent": "<p><strong>Published at:</strong> </p>\n<ul>\n<li>Adjunct Proceedings of the 17th International Conference on Automotive User Interfaces and Interactive Vehicular Applications (AutomotiveUI 2025)\n<a href=\"https://doi.org/10.1145/3744335.375685\">doi.org/10.1145/3744335.375685</a></li>\n</ul>\n<hr>\n",
     "materials": [
       {
         "type": "report",
@@ -168,7 +237,20 @@ const rawProjects = [
     "year": "2025",
     "team": "보슷홍다이나믹스",
     "members": "Yongjun Kim, Jungho Kwon, Sojin Han",
-    "authors": [],
+    "authors": [
+      {
+        "name": "Yongjun Kim",
+        "affiliation": "Industrial Design, Hongik University"
+      },
+      {
+        "name": "Jungho Kwon",
+        "affiliation": "Industrial Design, Hongik University"
+      },
+      {
+        "name": "Sojin Han",
+        "affiliation": "School of Electronics and Electrical Engineering, Hongik University"
+      }
+    ],
     "title": "Taming XR Zombies: Proxemics-Aware Kinesthetic Feedback Interfaces for Safe Social Harmony in Autonomous Mobility Environments",
     "desc": "As extended reality (XR) technologies approach mainstream adoption in autonomous vehicles (AVs), passengers will engage in sustained immersive experiences throughout their journeys. However, when multiple passengers use XR headsets in confined vehicle spaces, this creates new challenges in physical safety and social dynamics due to compromised spatial awareness and movement interference. We present a proximity-aware kinesthetic constraint and adaptive XR interaction system that addresses both physical coordination and interaction design challenges. Grounded in proxemic theory, the system operates through progressive Open/Medium/Dense modes: dynamically constraining arm movement via elbow-to-waist and wrist-to-shoulder restrictions while simultaneously adapting XR interactions from grab to ray-casting to micro-gesture (thumb-based). The system includes an emergency shutdown for sudden vehicle motion changes, immediately releasing all physical constraints and pausing XR content. Our approach demonstrates a novel solution for maintaining both usable XR experiences and respectful personal space in shared autonomous mobility environments.",
     "keywords": [
@@ -200,7 +282,24 @@ const rawProjects = [
     "year": "2025",
     "team": "Aboard",
     "members": "Juang Lee, Yeonwoo Kang, Seongchan Nam, Soonbum Kwon",
-    "authors": [],
+    "authors": [
+      {
+        "name": "Juang Lee",
+        "affiliation": "Mechanical and System Design Engineering (Design Engineering), Hongik University"
+      },
+      {
+        "name": "Yeonwoo Kang",
+        "affiliation": "Visual Communication Design, Hongik University"
+      },
+      {
+        "name": "Seongchan Nam",
+        "affiliation": "Industrial Design, Hongik University"
+      },
+      {
+        "name": "Soonbum Kwon",
+        "affiliation": "School of Liberal Studies, Hongik University"
+      }
+    ],
     "title": "Reconfigurable Roadways: Envisioning the Future of V2X-Driven Autonomous Urban Infrastructure through an Interactive Tabletop Simulator",
     "desc": "As autonomous mobility approaches Level 4, we are now in a transitional phase shaped by fundamental changes in how passengers perceive safety, trust, and control. This study proposes a concept of multilevel feedback interface to alleviate passenger anxiety toward autonomous systems during this critical shift. The interface adopts a hybrid multilevel feedback approach, consisting of four distinct modes–Standby, Infotainment, Indicating, and Control–that respond to varying levels and sources of passenger anxiety through tactile and graphical cues. We present the concept, design process, and implementation of this interface, which aims to envision future autonomous mobility systems that are emotionally responsive, trust-enhancing, and passenger-centered.",
     "keywords": [

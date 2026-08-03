@@ -140,13 +140,13 @@ function openProjectDetail(project) {
   document.getElementById('modalTeamTag').innerText = project.team;
   document.getElementById('modalTitle').innerText = project.title;
 
-  // Show each member with their affiliation in parentheses when available
-  // (parsed from the markdown's "## Affiliations" list); otherwise fall
-  // back to the plain member name list.
-  const teamLine = (project.authors && project.authors.length > 0)
-    ? project.authors.map(a => `${a.name} (${a.affiliation})`).join(', ')
-    : project.members;
-  document.getElementById('modalTeam').innerText = `Team Members: ${teamLine}`;
+  // One member per line, name bolded, with their affiliation in parentheses
+  // when available (parsed from the markdown's "## Affiliations" list);
+  // otherwise fall back to just the bolded name.
+  const memberLines = (project.authors && project.authors.length > 0)
+    ? project.authors.map(a => `<strong>${a.name}</strong> (${a.affiliation})`)
+    : project.members.split(',').map(name => `<strong>${name.trim()}</strong>`);
+  document.getElementById('modalTeam').innerHTML = `Team Members:<br>${memberLines.join('<br>')}`;
 
   // Set description (full text, no truncation)
   document.getElementById('projectDesc').innerText = project.desc;

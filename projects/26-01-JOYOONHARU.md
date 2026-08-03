@@ -17,3 +17,9 @@ materials:
 **To Appear at:** 
 - Adjunct Proceedings of the 18th International Conference on Automotive User Interfaces and Interactive Vehicular Applications (AutomotiveUI 2026)
 [doi.org/10.1145/3828158.3833053](https://doi.org/10.1145/3828158.3833053)
+
+## 👥 Affiliations
+
+* **Kyeongmin Ha** — Design Convergence (Deisgn Engineering), Hongik University 
+* **Huiseo Yun** — Visual Communication Design, Hongik University 
+* **Yuna Cho** — Industrial Design, Hongik University 

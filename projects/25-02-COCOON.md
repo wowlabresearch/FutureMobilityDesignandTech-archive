@@ -17,3 +17,11 @@ materials:
 **Published at:** 
 - Adjunct Proceedings of the 17th International Conference on Automotive User Interfaces and Interactive Vehicular Applications (AutomotiveUI 2025)
 [doi.org/10.1145/3744335.375685](https://doi.org/10.1145/3744335.375685)
+
+---
+
+## 👥 Affiliations
+
+* **Hyeonjoon So** — Mechanical & System Design Engineering, Hongik University 
+* **Eugene Han** — Visual Communication Design, Hongik University 
+* **Haon Jo** — Industrial Design, Hongik University 

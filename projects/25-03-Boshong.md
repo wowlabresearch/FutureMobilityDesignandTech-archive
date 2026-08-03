@@ -22,3 +22,9 @@ materials:
 [doi.org/10.1145/3744335.3758478](https://doi.org/10.1145/3744335.3758478)
 - Proceedings of the 2025 31st ACM Symposium on Virtual Reality Software and Technology (VRST 2025)
 [doi.org/10.1145/3756884.3768375](https://doi.org/10.1145/3756884.3768375)
+
+## 👥 Affiliations
+
+* **Yongjun Kim** — Industrial Design, Hongik University 
+* **Jungho Kwon** — Industrial Design, Hongik University 
+* **Sojin Han** — School of Electronics and Electrical Engineering, Hongik University 

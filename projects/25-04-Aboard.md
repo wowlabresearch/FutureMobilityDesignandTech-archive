@@ -17,3 +17,10 @@ materials:
 **Published at:** 
 - Adjunct Proceedings of the 17th International Conference on Automotive User Interfaces and Interactive Vehicular Applications (AutomotiveUI 2025)
 [doi.org/10.1145/3744335.3756853](https://doi.org/10.1145/3744335.3756853)
+
+## 👥 Affiliations
+
+* **Juang Lee** — Mechanical and System Design Engineering (Design Engineering), Hongik University 
+* **Yeonwoo Kang** — Visual Communication Design, Hongik University 
+* **Seongchan Nam** — Industrial Design, Hongik University 
+* **Soonbum Kwon** — School of Liberal Studies, Hongik University 
