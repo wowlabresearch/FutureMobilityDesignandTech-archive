@@ -11,7 +11,7 @@ youtubeEmbed: "https://www.youtube.com/embed/RQFFoSAWCWI?si=ARGUlcas222l_43w"
 
 <div style="text-align: center; margin: 20px 0;">
 <img src="./assets/2026/fig/ideal.gif" width="80%">
-
+<img src="./assets/2026/fig/ideal-demo.gif" width="80%">
 </div>
 
 ## 👥 Affiliations

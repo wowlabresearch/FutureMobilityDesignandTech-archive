@@ -40,7 +40,7 @@ const rawProjects = [
     "youtubeEmbed": "https://www.youtube.com/embed/RQFFoSAWCWI?si=ARGUlcas222l_43w",
     "videoUrl": null,
     "gallery": [],
-    "blogContent": "<div style=\"text-align: center; margin: 20px 0;\">\n<img src=\"./assets/2026/fig/ideal.gif\" width=\"80%\"></div>",
+    "blogContent": "<div style=\"text-align: center; margin: 20px 0;\">\n<img src=\"./assets/2026/fig/ideal.gif\" width=\"80%\">\n<img src=\"./assets/2026/fig/ideal-demo.gif\" width=\"80%\">\n</div>",
     "materials": []
   },
   {
