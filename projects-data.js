@@ -87,6 +87,40 @@ const rawProjects = [
   {
     "id": 9,
     "year": "2026",
+    "team": "AXIS",
+    "members": "Mina Kim, Jinwoo Han, Sanghyeon Hwang",
+    "authors": [
+      {
+        "name": "Mina Kim",
+        "affiliation": "Industrial Design, Hongik University"
+      },
+      {
+        "name": "Jinwoo Han",
+        "affiliation": "Industrial Design, Hongik University"
+      },
+      {
+        "name": "Sanghyeon Hwang",
+        "affiliation": "Mechanical and System Design Engineering, Hongik University"
+      }
+    ],
+    "title": "CONI: Automated Road-Surface Projection and Haptic Communication for Personal Mobility Safety",
+    "desc": "Increasing personal mobility (PM) usage has elevated collision risks with pedestrians due to fragmented communication and auditory or visual distractions. To overcome manual warning limitations, we propose CONI, an automated handlebar-mounted communication system integrating projection graphics, directional audio, and haptic feedback. Driven by an IMU, front-facing mmWave radar, and a rear-scanning ToF sensor, CONI dynamically predicts riding trajectories and tracks surrounding obstacles. The system projects continuous directional graphics onto the road surface to convey intent to pedestrians while triggering automated audible warnings when proximity hazards are detected. Concurrently, a 180-degree rear-scanning mechanism identifies approaching objects, alerting riders via handlebar haptic vibrations and projected road cues without requiring backward glances. By unifying visual, auditory, and tactile modalities into an automated workflow, CONI establishes intuitive, context-aware interaction between PM riders and pedestrians, significantly enhancing urban micromobility safety.",
+    "keywords": [
+      "Micromobility",
+      "Personal Mobility",
+      "Haptics",
+      "Personal Safety"
+    ],
+    "thumb": "./assets/2026/thumbnails/CONI.gif",
+    "youtubeEmbed": "https://www.youtube.com/embed/WnKy14qWmOk?si=CBTfwvnQWrGJQ4iT",
+    "videoUrl": null,
+    "gallery": [],
+    "blogContent": "<p><strong>Submitted to:</strong> </p>\n<ul>\n<li>2026 James Dyson Award\n<a href=\"https://www.jamesdysonaward.org/ko-KR/2026/project/coni\">LINK</a></li>\n</ul>\n",
+    "materials": []
+  },
+  {
+    "id": 10,
+    "year": "2026",
     "team": "MOBI^2",
     "members": "Jisun Moon, Jungyeon Park, Jihee Choi",
     "authors": [
@@ -119,37 +153,39 @@ const rawProjects = [
     "materials": []
   },
   {
-    "id": 10,
+    "id": 11,
     "year": "2026",
-    "team": "AXIS",
-    "members": "Mina Kim, Jinwoo Han, Sanghyeon Hwang",
+    "team": "MOBIL-ET",
+    "members": "Jinyoung Jung, Jiyeon Jeon, Seungjae Lee",
     "authors": [
       {
-        "name": "Mina Kim",
+        "name": "Jinyoung Jung",
         "affiliation": "Industrial Design, Hongik University"
       },
       {
-        "name": "Jinwoo Han",
-        "affiliation": "Industrial Design, Hongik University"
+        "name": "Jiyeon Jeon",
+        "affiliation": "Visual Communication Design, Hongik University"
       },
       {
-        "name": "Sanghyeon Hwang",
+        "name": "Seungjae Lee",
         "affiliation": "Mechanical and System Design Engineering, Hongik University"
       }
     ],
-    "title": "CONI: Automated Road-Surface Projection and Haptic Communication for Personal Mobility Safety",
-    "desc": "Increasing personal mobility (PM) usage has elevated collision risks with pedestrians due to fragmented communication and auditory or visual distractions. To overcome manual warning limitations, we propose CONI, an automated handlebar-mounted communication system integrating projection graphics, directional audio, and haptic feedback. Driven by an IMU, front-facing mmWave radar, and a rear-scanning ToF sensor, CONI dynamically predicts riding trajectories and tracks surrounding obstacles. The system projects continuous directional graphics onto the road surface to convey intent to pedestrians while triggering automated audible warnings when proximity hazards are detected. Concurrently, a 180-degree rear-scanning mechanism identifies approaching objects, alerting riders via handlebar haptic vibrations and projected road cues without requiring backward glances. By unifying visual, auditory, and tactile modalities into an automated workflow, CONI establishes intuitive, context-aware interaction between PM riders and pedestrians, significantly enhancing urban micromobility safety.",
+    "title": "WAYVE: Reimagining Urban Mobility Platform for Relationship Building",
+    "desc": "While modern urban transit focuses heavily on functional efficiency, passengers often remain isolated in digital spaces, missing opportunities for meaningful social connection. We present WAYVE, an autonomous mobility platform that redefines transit into an ambient, emotionally adaptive space for relationship building. Designed to alleviate the social fatigue and awkwardness of modern dating, WAYVE facilitates organic interaction through context-aware ambient features. The vehicle integrates smart window displays, directional audio, and seat-embedded heart-rate sensors to subtly support conversation. Based on pre-shared user profiles and real-time physiological responses, the system prompts icebreaking topics, synchronizes shared music playlists, and adapts interior lighting to matching emotional states. Upon trip completion, users receive a personalized 'Journey Report' visualizing shared physiological rhythms to guide post-transit connection. By blending autonomous locomotion with affective computing, WAYVE turns passive travel time into a restorative and meaningful social journey.",
     "keywords": [
-      "Micromobility",
-      "Personal Mobility",
-      "Haptics",
-      "Personal Safety"
+      "Blind Date",
+      "Autonomous Vehicle",
+      "Service Design",
+      "UI/UX",
+      "Affective Computing",
+      "Icebreaking"
     ],
-    "thumb": "./assets/2026/thumbnails/CONI.gif",
-    "youtubeEmbed": "https://www.youtube.com/embed/WnKy14qWmOk?si=CBTfwvnQWrGJQ4iT",
-    "videoUrl": null,
+    "thumb": "./assets/2026/thumbnails/wayve.gif",
+    "youtubeEmbed": null,
+    "videoUrl": "https://video.wixstatic.com/video/a0f8fe_488174eff8d74e2c8299e21c4c51a990/1080p/mp4/file.mp4",
     "gallery": [],
-    "blogContent": "<p><strong>Submitted to:</strong> </p>\n<ul>\n<li>2026 James Dyson Award\n<a href=\"https://www.jamesdysonaward.org/ko-KR/2026/project/coni\">LINK</a></li>\n</ul>\n",
+    "blogContent": "",
     "materials": []
   },
   {

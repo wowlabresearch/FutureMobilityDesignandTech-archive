@@ -75,7 +75,7 @@ function loadProjects() {
       keywords: data.keywords || [],
       thumb: data.thumb || '',
       youtubeEmbed: data.youtubeEmbed || null,
-      videoUrl: data.videoUrl || null,
+      videoUrl: data.videoUrl || data.video || null,
       gallery: data.gallery || [],
       blogContent: marked.parse(bodyContent),
       materials: data.materials || []
