@@ -305,7 +305,7 @@ const rawProjects = [
   {
     "id": 3,
     "year": "2025",
-    "team": "보슷홍다이나믹스",
+    "team": "홍다이모터스",
     "members": "Yongjun Kim, Jungho Kwon, Sojin Han",
     "authors": [
       {
