@@ -189,40 +189,6 @@ const rawProjects = [
     "materials": []
   },
   {
-    "id": 12,
-    "year": "2026",
-    "team": "MOBI^2",
-    "members": "Jisun Moon, Jungyeon Park, Jihee Choi",
-    "authors": [
-      {
-        "name": "Jisun Moon",
-        "affiliation": "Mechanical and System Design Engineering, Hongik University"
-      },
-      {
-        "name": "Jungyeon Park",
-        "affiliation": "Design Convergence, Hongik University"
-      },
-      {
-        "name": "Jihee Choi",
-        "affiliation": "Industrial Design, Hongik University"
-      }
-    ],
-    "title": "ViA: AR Glasses Bridging Seamless Fandom Experiences Across Urban Mobility Journeys",
-    "desc": "Urban fandom experiences are often fragmented during transit, where fragmented information forces users to repeatedly check details and breaks emotional immersion. To address this discontinuity, we propose ViA, an AR glasses system designed to deliver a seamless, context-aware user experience across all stages of transit—from pre-trip preparation to multi-modal travel, venue navigation, and return home. By shifting the interface from smartphones to hands-free augmented reality layers over real-world surroundings, ViA provides continuous navigation, contextual alerts, real-time physiological tracking via a companion wristband, and instant view-sharing. Furthermore, customizable modular accessories such as light stick attachments and frame cases transform standard smart eyewear into a personalized fan identity[cite: 1]. Ultimately, ViA redefines travel time from a passive spent duration into an immersive extension of the fandom journey, creating unbroken emotional and functional continuity across urban spaces",
-    "keywords": [
-      "AR glasses",
-      "Fandom",
-      "Seamless Experience",
-      "Transit Experience"
-    ],
-    "thumb": "./assets/2026/thumbnails/via.gif",
-    "youtubeEmbed": "https://www.youtube.com/embed/PweNp3ErGrA?si=k5JBKZSPEV2TVTrM",
-    "videoUrl": null,
-    "gallery": [],
-    "blogContent": "<div style=\"text-align: center; margin: 20px 0;\">\n<img src=\"./assets/2026/fig/via.png\" width=\"80%\">\n<img src=\"./assets/2026/fig/via2.png\" width=\"80%\">\n<img src=\"./assets/2026/fig/via3.png\" width=\"80%\">\n<img src=\"./assets/2026/fig/via4.png\" width=\"80%\"></div>",
-    "materials": []
-  },
-  {
     "id": 1,
     "year": "2025",
     "team": "Omega",
